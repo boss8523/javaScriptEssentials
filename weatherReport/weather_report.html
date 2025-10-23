@@ -1,18 +1,32 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Weather Report</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Weather</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="weather_report.css"
 </head>
 <body>
-   <h1>Weather Report</h1>
+  <div class="card">
+    <div class="header">
+      <div class="logo">W</div>
+      <div>
+        <h1>Simple Weather</h1>
+        <p class="lead">Quick, clean, and beautiful weather lookup</p>
+      </div>
+    </div>
 
-  <form id="weatherForm">
-    <label for="city">Enter City:</label>
-    <input type="text" id="city" name="city">
-    <button type="submit">Get Weather</button>
-  </form>
+    <form id="weatherForm" autocomplete="off">
+      <input id="city" type="text" placeholder="Enter city (e.g. Dubai)" required />
+      <button type="submit">Search</button>
+    </form>
 
-  <div id="weatherInfo"></div>
-<script src="./weather_report.js"></script>
+    <div id="weatherInfo" aria-live="polite">
+      <!-- results appear here -->
+    </div>
+
+    <p class="hint">Tip: Use city name. You can add a country code like "Paris,fr" for accuracy.</p>
+  </div>
+  <script src="./weather_report.js"></script>
 </body>
 </html>

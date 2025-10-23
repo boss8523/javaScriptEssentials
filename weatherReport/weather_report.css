@@ -1,0 +1,62 @@
+
+    :root{
+      --bg-1: #0f172a;
+      --bg-2: #0b2138;
+      --card: rgba(255,255,255,0.06);
+      --accent: #60a5fa;
+      --glass: rgba(255,255,255,0.05);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Arial}
+    body{
+      display:grid;place-items:center;
+      background: radial-gradient(800px 400px at 10% 10%, #0b2b48 0%, transparent 10%),
+                  linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      color: #e6eef8;
+      padding:24px;
+    }
+
+    .card{
+      width:100%;
+      max-width:420px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius:16px;
+      padding:20px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    .header{
+      display:flex;align-items:center;gap:12px;margin-bottom:12px
+    }
+    .logo{
+      width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6);
+      display:grid;place-items:center;font-weight:700;color:#05203a;font-size:20px;box-shadow:0 6px 18px rgba(59,130,246,0.18)
+    }
+    h1{font-size:18px;margin:0}
+    p.lead{margin:0;color:#cfe8ff9e;font-size:13px}
+
+    form{display:flex;gap:8px;margin-top:12px}
+    input[type="text"]{
+      flex:1;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+      background:transparent;color:inherit;font-size:14px;outline:none
+    }
+    button{padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#3b82f6);color:#04243b;font-weight:600;cursor:pointer}
+    button:active{transform:translateY(1px)}
+
+    .result{margin-top:18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+    .temp{font-size:40px;font-weight:700}
+    .small{font-size:13px;color:#cfe8ff9e}
+
+    .meta{display:flex;flex-direction:column;gap:6px;text-align:right}
+    .weather-icon{width:90px;height:90px;display:grid;place-items:center}
+
+    .extras{display:flex;gap:12px;margin-top:12px}
+    .pill{flex:1;background:var(--glass);padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);font-size:13px}
+
+    .hint{margin-top:12px;font-size:12px;color:#9fc7ff7a}
+
+    /* responsive */
+    @media (max-width:420px){.temp{font-size:32px}.weather-icon{width:72px;height:72px}}

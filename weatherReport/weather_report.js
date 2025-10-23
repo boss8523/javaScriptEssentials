@@ -9,10 +9,22 @@ function showweatherDetails(event) {
         .then(response => response.json())
         .then(data => {
           console.log(data)
-          const weatherInfo = document.getElementById('weatherInfo');
-          weatherInfo.innerHTML = `<h2>Weather in ${data.name}</h2>
-                                  <p>Temperature: ${data.main.temp} &#8451;</p>
-                                  <p>Weather: ${data.weather[0].description}</p>`;
-        })
-    }
+   
+          weatherInfo.innerHTML = `<div class="result">
+          <div>
+            <div class="temp">${data.main.temp}K;</div>
+            <div class="small">${data.weather[0].description} • <strong>${data.name}</strong></div>
+
+            <div class="extras">
+              <div class="pill">💧 Humidity: ${data.main.humidity}%</div>
+              <div class="pill">🍃 Wind: ${(data.wind.speed * 3.6).toFixed(1)} km/h</div>
+            </div>
+          </div>
+
+          <div class="weather-icon">
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}" width="80" height="80" />
+          </div>
+        </div>
+      `;
+    })}
    document.getElementById('weatherForm').addEventListener('submit',showweatherDetails );      
